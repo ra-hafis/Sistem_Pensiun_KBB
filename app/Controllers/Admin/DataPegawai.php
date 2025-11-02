@@ -13,14 +13,12 @@ class DataPegawai extends BaseController
 
     public function __construct()
     {
-        // Ambil URL dan Token dari file .env
+
         $this->apiBaseUrl = getenv('SIMPEG_API_URL');
         $this->apiToken = getenv('SIMPEG_API_TOKEN');
     }
 
-    /**
-     * Cek koneksi dasar ke API (uji route + fungsi)
-     */
+
     public function index()
     {
         echo "Controller terhubung!<br>";
