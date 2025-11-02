@@ -1,0 +1,55 @@
+ body {
+            background-color: #f8f9fc;
+            height: 300vh;
+            /* full height */
+            margin: 0;
+        }
+
+        .sidebar {
+            height: 300vh;
+            background: #fff;
+            padding-top: 20px;
+            border-right: 1px solid #e3e6f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-y: auto;
+            /* scroll jika menu panjang */
+        }
+
+        .sidebar .menu {
+            flex-grow: 1;
+        }
+
+        .sidebar a {
+            color: #4e73df;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .sidebar a.active,
+        .sidebar a:hover {
+            background-color: #4e73df;
+            color: #fff;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        .content {
+            padding: 20px;
+            overflow-x: auto;
+            /* agar tabel panjang tetap bisa di-scroll horizontal */
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }

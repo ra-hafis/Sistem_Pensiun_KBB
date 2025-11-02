@@ -1,0 +1,53 @@
+DEBUG - 2025-10-16 04:09:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-16 04:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-16 04:10:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-16 04:10:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-16 04:10:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-16 04:10:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-16 04:10:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-16 04:10:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-16 04:10:42 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{
+    "error": "Expired token"
+}
+
+ERROR - 2025-10-16 04:24:21 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+{
+    "title": "CodeIgniter\\Exceptions\\PageNotFoundException",
+    "type": "CodeIgniter\\Exceptions\\PageNotFoundExcep (truncated...)
+
+ERROR - 2025-10-16 04:24:22 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+{
+    "title": "CodeIgniter\\Exceptions\\PageNotFoundException",
+    "type": "CodeIgniter\\Exceptions\\PageNotFoundExcep (truncated...)
+
+ERROR - 2025-10-16 04:24:43 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+{
+    "title": "CodeIgniter\\Exceptions\\PageNotFoundException",
+    "type": "CodeIgniter\\Exceptions\\PageNotFoundExcep (truncated...)
+
+ERROR - 2025-10-16 04:24:45 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+{
+    "title": "CodeIgniter\\Exceptions\\PageNotFoundException",
+    "type": "CodeIgniter\\Exceptions\\PageNotFoundExcep (truncated...)
+
+ERROR - 2025-10-16 04:24:48 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+{
+    "title": "CodeIgniter\\Exceptions\\PageNotFoundException",
+    "type": "CodeIgniter\\Exceptions\\PageNotFoundExcep (truncated...)
+
+ERROR - 2025-10-16 04:28:18 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+{
+    "title": "CodeIgniter\\Exceptions\\PageNotFoundException",
+    "type": "CodeIgniter\\Exceptions\\PageNotFoundExcep (truncated...)
+
+ERROR - 2025-10-16 04:28:33 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{
+    "error": "Expired token"
+}
+
+ERROR - 2025-10-16 04:28:35 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{
+    "error": "Expired token"
+}
+

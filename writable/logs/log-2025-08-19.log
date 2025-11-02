@@ -1,0 +1,1149 @@
+ERROR - 2025-08-19 05:40:54 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sistem_pensiuna...', 3306, '', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Auth.php(25): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Auth->processLogin()
+#8 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+#9 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\KP_Pensiun\system\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\KP_Pensiun\system\BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Auth.php(25): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Auth->processLogin()
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+#8 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2025-08-19 05:40:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Database\BaseConnection.php on line 465.
+ 1 SYSTEMPATH\Database\BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `admin`
+WHERE `username` = :username:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Admin\Auth.php(25): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Auth->processLogin()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 20:16:08 --> TypeError: Cannot access offset of type string on string
+[Method: GET, Route: user/pengajuan/tambah]
+in APPPATH\Views\user\pengajuan_tambah.php on line 77.
+ 1 SYSTEMPATH\View\View.php(226): include()
+ 2 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/pengajuan_tambah', [], true)
+ 4 APPPATH\Controllers\User\Pengajuan.php(31): view('user/pengajuan_tambah', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User\Pengajuan->tambah()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 20:31:07 --> mysqli_sql_exception: Unknown column 'updated_at' in 'field list' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\KP_Pensiun\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\KP_Pensiun\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\KP_Pensiun\app\Controllers\User\Pengajuan.php(44): CodeIgniter\Model->insert(Array, true)
+#8 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\User\Pengajuan->store()
+#9 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User\Pengajuan))
+#10 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#15 {main}
+CRITICAL - 2025-08-19 20:31:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+[Method: POST, Route: user/pengajuan/store]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (:pegawai_id:, :jenis:, :status:, :keterangan:, :created_at:, :updated_at:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\User\Pengajuan.php(44): CodeIgniter\Model->insert([...], true)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User\Pengajuan->store()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 20:31:07 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (\'1\', \'Uzur\', \'Menunggu\', \'\', \'2025-08-19 20:31:07\', \'2025-08-19 20:31:07\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (\'1\', \'Uzur\', \'Menunggu\', \'\', \'2025-08-19 20:31:07\', \'2025-08-19 20:31:07\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (:pegawai_id:, :jenis:, :status:, :keterangan:, :created_at:, :updated_at:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\User\Pengajuan.php(44): CodeIgniter\Model->insert([...], true)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User\Pengajuan->store()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User\Pengajuan))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 20:31:07 --> [Caused by] mysqli_sql_exception: Unknown column 'updated_at' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (\'1\', \'Uzur\', \'Menunggu\', \'\', \'2025-08-19 20:31:07\', \'2025-08-19 20:31:07\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (\'1\', \'Uzur\', \'Menunggu\', \'\', \'2025-08-19 20:31:07\', \'2025-08-19 20:31:07\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (\'1\', \'Uzur\', \'Menunggu\', \'\', \'2025-08-19 20:31:07\', \'2025-08-19 20:31:07\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pengajuan` (`pegawai_id`, `jenis`, `status`, `keterangan`, `created_at`, `updated_at`) VALUES (:pegawai_id:, :jenis:, :status:, :keterangan:, :created_at:, :updated_at:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\User\Pengajuan.php(44): CodeIgniter\Model->insert([...], true)
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User\Pengajuan->store()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User\Pengajuan))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 20:43:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user/pengajuan_detail.php"
+[Method: GET, Route: user/pengajuan/detail/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user/pengajuan_detail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/pengajuan_detail', [], true)
+ 3 APPPATH\Controllers\User\Pengajuan.php(100): view('user/pengajuan_detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User\Pengajuan->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User\Pengajuan))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 20:43:47 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "user/pengajuan_detail.php"
+[Method: GET, Route: user/pengajuan/detail/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user/pengajuan_detail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('user/pengajuan_detail', [], true)
+ 3 APPPATH\Controllers\User\Pengajuan.php(100): view('user/pengajuan_detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\User\Pengajuan->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User\Pengajuan))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:25:05 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/pengajuan/daftar]
+in APPPATH\Views\admin\daftar_pengajuan.php on line 42.
+ 1 APPPATH\Views\admin\daftar_pengajuan.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php', 42)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/daftar_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(13): view('admin/daftar_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:25:10 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/pengajuan/kelola]
+in APPPATH\Views\admin\kelola_pengajuan.php on line 26.
+ 1 APPPATH\Views\admin\kelola_pengajuan.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\kelola_pengajuan.php', 26)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\kelola_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/kelola_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(20): view('admin/kelola_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:28:52 --> mysqli_sql_exception: Table 'sistem_pensiunan_test.users' doesn't exist in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:28:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.users' doesn't exist
+[Method: GET, Route: admin/pengajuan/daftar]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:28:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:28:52 --> [Caused by] mysqli_sql_exception: Table 'sistem_pensiunan_test.users' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `users`.`nama`
+FROM `pengajuan`
+JOIN `users` ON `users`.`id` = `pengajuan`.`user_id`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:32:16 --> mysqli_sql_exception: Unknown column 'pengajuan.user_id' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:32:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.user_id' in 'on clause'
+[Method: GET, Route: admin/pengajuan/daftar]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:32:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.user_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:32:16 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.user_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`
+FROM `pengajuan`
+JOIN `pegawai` ON `pegawai`.`id` = `pengajuan`.`user_id`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:34:38 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/pengajuan/daftar]
+in APPPATH\Views\admin\daftar_pengajuan.php on line 42.
+ 1 APPPATH\Views\admin\daftar_pengajuan.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php', 42)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/daftar_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(20): view('admin/daftar_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:35:02 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/pengajuan/daftar]
+in APPPATH\Views\admin\daftar_pengajuan.php on line 42.
+ 1 APPPATH\Views\admin\daftar_pengajuan.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php', 42)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/daftar_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(20): view('admin/daftar_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:35:05 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/pengajuan/kelola]
+in APPPATH\Views\admin\kelola_pengajuan.php on line 26.
+ 1 APPPATH\Views\admin\kelola_pengajuan.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\kelola_pengajuan.php', 26)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\kelola_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/kelola_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(28): view('admin/kelola_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:43:40 --> ErrorException: Undefined array key "nama"
+[Method: GET, Route: admin/pengajuan/kelola]
+in APPPATH\Views\admin\kelola_pengajuan.php on line 26.
+ 1 APPPATH\Views\admin\kelola_pengajuan.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "nama"', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\kelola_pengajuan.php', 26)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\kelola_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/kelola_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(28): view('admin/kelola_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:46:06 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: admin/pengajuan/detail/1]
+in APPPATH\Views\admin\detail_pengajuan.php on line 10.
+ 1 APPPATH\Views\admin\detail_pengajuan.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\detail_pengajuan.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\detail_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/detail_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(37): view('admin/detail_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:51:38 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:51:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/daftar]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:38 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:38 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:51:44 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:51:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/kelola]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:44 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:51:48 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:51:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/daftar]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:48 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:48 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(21): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:51:51 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:51:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/kelola]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:51:51 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(32): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:54:15 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:54:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/kelola]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:15 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:54:57 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:54:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/kelola]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:57 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:54:58 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:54:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/kelola]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:58 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:54:59 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:54:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/kelola]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:59 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:54:59 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:54:59 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/kelola]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:59 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:54:59 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(30): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->kelola()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-19 21:55:04 --> mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengaju...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengaju...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengaju...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengaju...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-19 21:55:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+[Method: GET, Route: admin/pengajuan/daftar]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 2 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:55:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 4 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 21:55:04 --> [Caused by] mysqli_sql_exception: Unknown column 'pengajuan.nip' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pengajuan`.*, `pegawai`.`nama`, `pegawai`.`dinas`
+FROM `pengajuan`
+LEFT JOIN `pegawai` ON `pegawai`.`nip` = `pengajuan`.`nip`', [], false)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 22:06:26 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: admin/pengajuan/detail/1]
+in APPPATH\Views\admin\detail_pengajuan.php on line 10.
+ 1 APPPATH\Views\admin\detail_pengajuan.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\detail_pengajuan.php', 10)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\detail_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/detail_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(43): view('admin/detail_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 22:43:31 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: admin/pengajuan/daftar]
+in SYSTEMPATH\View\View.php on line 430.
+ 1 APPPATH\Views\admin\daftar_pengajuan.php(45): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/daftar_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(24): view('admin/daftar_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-19 22:45:10 --> CodeIgniter\Exceptions\RuntimeException: View themes, no current section.
+[Method: GET, Route: admin/pengajuan/daftar]
+in SYSTEMPATH\View\View.php on line 430.
+ 1 APPPATH\Views\admin\daftar_pengajuan.php(45): CodeIgniter\View\View->endSection()
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\daftar_pengajuan.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/daftar_pengajuan', [], true)
+ 5 APPPATH\Controllers\Admin\Pengajuan.php(24): view('admin/daftar_pengajuan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Pengajuan->daftar()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')

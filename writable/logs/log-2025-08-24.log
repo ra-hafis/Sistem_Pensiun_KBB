@@ -1,0 +1,365 @@
+CRITICAL - 2025-08-24 14:57:04 --> ErrorException: Undefined variable $totalPengajuan
+[Method: GET, Route: admin/dashboard]
+in APPPATH\Views\admin\dashboard.php on line 35.
+ 1 APPPATH\Views\admin\dashboard.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $totalPengajuan', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\dashboard.php', 35)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\admin\\dashboard.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard', [], true)
+ 5 APPPATH\Controllers\Admin\Dashboard.php(43): view('admin/dashboard', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-24 15:01:22 --> mysqli_sql_exception: Unknown column 'dinas' in 'field list' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`,...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`,...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`,...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`,...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-24 15:01:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 2 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:01:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 4 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:01:22 --> [Caused by] mysqli_sql_exception: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 5 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-24 15:03:16 --> mysqli_sql_exception: Unknown column 'dinas' in 'field list' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`,...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`,...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`,...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`,...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-24 15:03:16 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 2 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:16 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 4 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:16 --> [Caused by] mysqli_sql_exception: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 5 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-24 15:03:18 --> mysqli_sql_exception: Unknown column 'dinas' in 'field list' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`,...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`,...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`,...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`,...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-24 15:03:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 2 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 4 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:18 --> [Caused by] mysqli_sql_exception: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 5 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-24 15:03:18 --> mysqli_sql_exception: Unknown column 'dinas' in 'field list' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`,...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`,...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`,...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`,...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-24 15:03:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 2 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 4 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:18 --> [Caused by] mysqli_sql_exception: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 5 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-08-24 15:03:20 --> mysqli_sql_exception: Unknown column 'dinas' in 'field list' in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`,...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`,...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`,...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`,...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-08-24 15:03:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 2 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 4 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-08-24 15:03:20 --> [Caused by] mysqli_sql_exception: Unknown column 'dinas' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `dinas`, COUNT(*) as total
+FROM `pengajuan`
+GROUP BY `dinas`', [], false)
+ 5 APPPATH\Controllers\Admin\Dashboard.php(62): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\Dashboard->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\Dashboard))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')

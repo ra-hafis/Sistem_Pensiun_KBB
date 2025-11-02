@@ -1,0 +1,83 @@
+CRITICAL - 2025-10-09 03:58:53 --> ErrorException: Maximum execution time of 60 seconds exceeded
+[Method: POST, Route: login/process]
+in SYSTEMPATH\Debug\Exceptions.php on line 208.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-10-09 08:45:03 --> API RequestException: cURL error 3: URL rejected: No host part in the URL (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for /pegawai/list
+ERROR - 2025-10-09 08:51:16 --> API Exception: Attempt to read property "nipBaru" on int
+CRITICAL - 2025-10-09 08:54:05 --> ErrorException: Attempt to read property "nipBaru" on int
+[Method: GET, Route: admin/data-pegawai]
+in APPPATH\Controllers\Admin\DataPegawai.php on line 37.
+ 1 APPPATH\Controllers\Admin\DataPegawai.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nipBaru" on int', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Controllers\\Admin\\DataPegawai.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\DataPegawai->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DataPegawai))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-10-09 08:54:41 --> ErrorException: Attempt to read property "nipBaru" on int
+[Method: GET, Route: admin/data-pegawai]
+in APPPATH\Controllers\Admin\DataPegawai.php on line 37.
+ 1 APPPATH\Controllers\Admin\DataPegawai.php(37): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "nipBaru" on int', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Controllers\\Admin\\DataPegawai.php', 37)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\DataPegawai->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DataPegawai))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-10-09 08:56:01 --> ErrorException: Undefined property: stdClass::$data
+[Method: GET, Route: admin/data-pegawai]
+in APPPATH\Controllers\Admin\DataPegawai.php on line 40.
+ 1 APPPATH\Controllers\Admin\DataPegawai.php(40): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$data', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Controllers\\Admin\\DataPegawai.php', 40)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\DataPegawai->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\DataPegawai))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+DEBUG - 2025-10-09 09:04:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 09:04:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 09:04:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 09:04:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-10-09 09:04:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-10-09 09:26:07 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:26:32 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:28:22 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:28:23 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:28:24 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:29:53 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:29:54 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:30:44 --> API RequestException: Client error: `POST https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `404 Not Found` response:
+""
+
+ERROR - 2025-10-09 09:34:21 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{"error":"Expired token"}
+
+ERROR - 2025-10-09 09:35:03 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{"error":"Expired token"}
+
+ERROR - 2025-10-09 09:35:04 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{"error":"Expired token"}
+
+ERROR - 2025-10-09 09:35:04 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{"error":"Expired token"}
+
+ERROR - 2025-10-09 09:35:19 --> API RequestException: Client error: `GET https://simpeg-api2.rcode.my.id/pegawai/list` resulted in a `401 Unauthorized` response:
+{"error":"Expired token"}
+

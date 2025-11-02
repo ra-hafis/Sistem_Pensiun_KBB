@@ -1,0 +1,442 @@
+CRITICAL - 2025-09-26 16:59:56 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "8ae48287598f1f690159908f3928565
+"
+[Method: GET, Route: dinas/pengajuan/pegawai/8ae48287598f1f690159908f3928565%0A]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dinas/pengajuan/pegawai/8ae48287598f1f690159908f3928565
+')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dinas/pengajuan/pegawai/8ae48287598f1f690159908f3928565
+')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 17:03:49 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "8ae48287598f1f690159908f3928565
+"
+[Method: GET, Route: dinas/pengajuan/pegawai/8ae48287598f1f690159908f3928565%0A]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('dinas/pengajuan/pegawai/8ae48287598f1f690159908f3928565
+')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('dinas/pengajuan/pegawai/8ae48287598f1f690159908f3928565
+')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-09-26 18:43:11 --> mysqli_sql_exception: Table 'sistem_pensiunan_test.pegawai' doesn't exist in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-09-26 18:43:11 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+[Method: GET, Route: dinas/pengajuan/tambah]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 2 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:43:11 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 4 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:43:11 --> [Caused by] mysqli_sql_exception: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-09-26 18:43:18 --> mysqli_sql_exception: Table 'sistem_pensiunan_test.pegawai' doesn't exist in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-09-26 18:43:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+[Method: GET, Route: dinas/pengajuan/tambah]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 2 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:43:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 4 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:43:18 --> [Caused by] mysqli_sql_exception: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+ERROR - 2025-09-26 18:43:53 --> mysqli_sql_exception: Table 'sistem_pensiunan_test.pegawai' doesn't exist in C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\KP_Pensiun\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\KP_Pensiun\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\KP_Pensiun\app\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+#6 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+#7 C:\xampp\htdocs\KP_Pensiun\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\KP_Pensiun\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\KP_Pensiun\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 C:\xampp\htdocs\KP_Pensiun\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2025-09-26 18:43:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+[Method: GET, Route: dinas/pengajuan/tambah]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 2 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 4 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 5 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:43:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 4 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:43:53 --> [Caused by] mysqli_sql_exception: Table 'sistem_pensiunan_test.pegawai' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = \'3\'
+ORDER BY `nama` ASC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `pegawai`
+WHERE `dinas_id` = :dinas_id:
+ORDER BY `nama` ASC', [...], false)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(77): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:55:25 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 18.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:56:53 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 18.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:56:57 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 18.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:57:47 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 18.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:57:51 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 18.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:58:57 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 18.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 18:59:00 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 18.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 18)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 19:01:06 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 17.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 19:02:42 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 17.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 19:02:45 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 17.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 19:12:19 --> ErrorException: Undefined variable $pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in APPPATH\Views\dinas\pengajuan_tambah.php on line 17.
+ 1 APPPATH\Views\dinas\pengajuan_tambah.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pegawai', 'C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php', 17)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\KP_Pensiun\\app\\Views\\dinas\\pengajuan_tambah.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('dinas/pengajuan_tambah', [], true)
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(97): view('dinas/pengajuan_tambah', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
+CRITICAL - 2025-09-26 19:46:09 --> CodeIgniter\HTTP\Exceptions\HTTPException: 6 : Could not resolve host: pegawai
+[Method: GET, Route: dinas/pengajuan/tambah]
+in SYSTEMPATH\HTTP\CURLRequest.php on line 699.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(699): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('6', 'Could not resolve host: pegawai')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(381): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(150): CodeIgniter\HTTP\CURLRequest->send('GET', 'http://pegawai/list?id=8ae483c5812279a101814268188e029d')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(185): CodeIgniter\HTTP\CURLRequest->request('GET', 'http://pegawai/list?id=8ae483c5812279a101814268188e029d', [...])
+ 5 APPPATH\Controllers\Dinas\Pengajuan.php(83): CodeIgniter\HTTP\CURLRequest->get('/pegawai/list?id=8ae483c5812279a101814268188e029d', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dinas\Pengajuan->tambah()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dinas\Pengajuan))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\KP_Pensiun\\public\\index.php')
