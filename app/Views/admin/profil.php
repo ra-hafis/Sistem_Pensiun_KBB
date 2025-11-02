@@ -16,10 +16,8 @@
                 <p class="text-muted">Badan Kepegawaian dan Pengembangan SDM</p>
 
                 <div class="mt-3">
-                    <?php
-                    $foto = $admin['foto'] ?? '';
-                    if (!empty($foto)):
-                        ?>
+                    <?php $foto = $admin['foto'] ?? ''; ?>
+                    <?php if (!empty($foto)): ?>
                         <img src="<?= base_url('uploads/' . $foto) ?>?v=<?= time() ?>"
                             class="shadow-sm border border-2 border-primary"
                             style="object-fit:cover; width: 250px; height:250px;" alt="Foto Profil">
@@ -28,10 +26,9 @@
                     <?php endif; ?>
                 </div>
 
-                <!-- Info Admin di bawah foto -->
                 <div class="mt-3 p-3 bg-light rounded shadow-sm text-start">
-                    <p><i class="bi bi-person"></i> <strong>Nama Admin :</strong> <?= esc($admin['nama'] ?? '-') ?></p>
-                    <p><i class="bi bi-person-badge"></i> <strong>Username :</strong>
+                    <p><i class="bi bi-person"></i> <strong>Nama Admin:</strong> <?= esc($admin['nama'] ?? '-') ?></p>
+                    <p><i class="bi bi-person-badge"></i> <strong>Username:</strong>
                         <?= esc($admin['username'] ?? '-') ?></p>
                 </div>
             </div>
@@ -42,32 +39,31 @@
                 <table class="table table-borderless">
                     <tr>
                         <td width="180"><i class="bi bi-geo-alt"></i> Alamat</td>
-                        <td>: Komplek Pemda Kabupaten Bandung Barat Jl. Raya Padalarang-Cisarua Km.2 Ngamprah</td>
+                        <td>: <?= esc($admin['alamat'] ?? '-') ?></td>
                     </tr>
                     <tr>
                         <td><i class="bi bi-telephone"></i> Whatsapp</td>
-                        <td>: Dengan WhatsApp / E-Mail, Anda dapat:
-                            Mengajukan pertanyaan mengenai layanan kepegawaian. Memberikan masukan dan saran untuk
-                            meningkatkan kualitas layanan.</td>
+                        <td>: <?= esc($admin['whatsapp'] ?? '-') ?></td>
                     </tr>
                     <tr>
                         <td><i class="bi bi-envelope"></i> Email</td>
-                        <td>: bkpsdm[at]bandungbaratkab.go.id</td>
+                        <td>: <?= esc($admin['email'] ?? '-') ?></td>
                     </tr>
                     <tr>
                         <td><i class="bi bi-globe"></i> Website</td>
-                        <td>: <a href="https://bandungbaratkab.go.id/" target="_blank">bkpsdm.kabbandungbarat.go.id</a>
-                        </td>
+                        <td>: <a href="<?= esc($admin['website'] ?? '#') ?>" target="_blank">
+                                <?= esc($admin['website'] ?? '-') ?></a></td>
                     </tr>
                     <tr>
                         <td><i class="bi bi-people"></i> Kepala BKPSDM</td>
-                        <td>: Rega Wiguna, S.STP., M.I.P.</td>
+                        <td>: <?= esc($admin['kepala'] ?? '-') ?></td>
                     </tr>
                 </table>
 
                 <h5 class="fw-bold mt-4">Visi</h5>
-                <p class="fst-italic">“Bandung Barat yang AMANAH (Agamis, Maju, Adaptif, Nyaman, Aspiratif dan
-                    Harmonis)”</p>
+                <p class="fst-italic">
+                    “Bandung Barat yang AMANAH (Agamis, Maju, Adaptif, Nyaman, Aspiratif dan Harmonis)”
+                </p>
 
                 <h5 class="fw-bold mt-3">Misi</h5>
                 <ul>
@@ -75,22 +71,23 @@
                     <li>Meningkatkan Produktifitas dan Pertumbuhan Ekonomi Inklusif berbasis potensi sektor unggulan
                         daerah.</li>
                     <li>Mewujudkan Tata Kelola Pemerintahan Yang Profesional, Inovatif, Transparan dan Akuntabel.</li>
-                    <li>Mempercepat Pembangunan Infrastruktur dan aksebilitas Wilayah.</li>
+                    <li>Mempercepat Pembangunan Infrastruktur dan aksesibilitas Wilayah.</li>
                     <li>Meningkatkan Lingkungan hidup yang Tangguh dan Berkelanjutan.</li>
                     <li>Mewujudkan Kondisi yang Harmonis di Masyarakat berdasarkan kearifan Budaya Lokal.</li>
                 </ul>
 
                 <h5 class="fw-bold mt-3">Fungsi</h5>
                 <ul>
-                    <li>Badan Kepegawaian dan Pengembangan Sumber Daya Manusia merupakan fungsi penunjang Urusan
-                        Pemerintahan bidang kepegawaian, dan bidang pendidikan dan pelatihan yang dipimpin oleh seorang
-                        Kepala Badan, berkedudukan di bawah dan bertanggungjawab kepada Bupati melalui Sekretaris
-                        Daerah.</li>
+                    <li>Badan Kepegawaian dan Pengembangan Sumber Daya Manusia merupakan fungsi penunjang
+                        Urusan Pemerintahan bidang kepegawaian, dan bidang pendidikan dan pelatihan yang
+                        dipimpin oleh seorang Kepala Badan, berkedudukan di bawah dan bertanggungjawab
+                        kepada Bupati melalui Sekretaris Daerah.
+                    </li>
                 </ul>
             </div>
         </div>
 
-        <!-- Tombol Edit di Paling Bawah -->
+        <!-- Tombol Edit -->
         <div class="text-center mt-4">
             <a href="<?= base_url('/admin/profil/edit') ?>" class="btn btn-primary rounded-pill px-4">
                 <i class="bi bi-pencil-square"></i> Edit Profil

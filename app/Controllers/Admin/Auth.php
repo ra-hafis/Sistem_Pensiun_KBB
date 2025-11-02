@@ -150,6 +150,7 @@ class Auth extends BaseController
         }
         if ($newPass !== $confirmPass) {
             return redirect()->back()->with('error', 'Konfirmasi password tidak sama!');
+
         }
 
         $adminModel = new AdminModel();

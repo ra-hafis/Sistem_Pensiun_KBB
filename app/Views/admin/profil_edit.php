@@ -8,13 +8,14 @@
 
 <div class="container mt-4">
     <div class="card shadow-lg p-4 rounded-4 border-0">
-        <h4 class="fw-bold mb-3 text-center text-primary">
-            <i class="bi bi-pencil-square"></i> Formulir Edit Profil BKPSDM
-        </h4>
-
+       
         <?php if (session()->getFlashdata('success')): ?>
             <div class="alert alert-success"><i class="bi bi-check-circle-fill"></i>
                 <?= session()->getFlashdata('success') ?>
+            </div>
+        <?php elseif (session()->getFlashdata('error')): ?>
+            <div class="alert alert-danger"><i class="bi bi-exclamation-circle-fill"></i>
+                <?= session()->getFlashdata('error') ?>
             </div>
         <?php endif; ?>
 
@@ -30,7 +31,6 @@
             $website  = $admin['website'] ?? '';
             $kepala   = $admin['kepala'] ?? '';
             $foto     = $admin['foto'] ?? '';
-            $fotoPath = ROOTPATH . 'public/uploads/' . $foto;
             ?>
 
             <div class="row">
@@ -38,7 +38,7 @@
                 <div class="col-md-4 text-center">
                     <div class="mb-3">
                         <label class="form-label d-block fw-bold">Foto Profil Saat Ini</label>
-                        <?php if (!empty($foto) && file_exists($fotoPath)): ?>
+                        <?php if (!empty($foto) && file_exists(ROOTPATH . 'public/uploads/' . $foto)): ?>
                             <img src="<?= base_url('uploads/' . $foto) ?>?v=<?= time() ?>"
                                 class="shadow-sm border border-2 border-primary rounded"
                                 style="object-fit:cover; width:200px; height:200px;" alt="Foto Profil">
@@ -50,6 +50,7 @@
                     <div class="mb-3">
                         <label for="foto" class="form-label fw-bold"><i class="bi bi-image"></i> Ganti Foto</label>
                         <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
+                        <small class="text-muted">Maksimal 2MB (jpg, jpeg, png, gif)</small>
                     </div>
                 </div>
 
@@ -61,8 +62,8 @@
                         <label for="nama" class="form-label">Nama Lengkap</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-person"></i></span>
-                            <input type="text" class="form-control" id="nama" name="nama" 
-                                   value="<?= esc($nama) ?>" required>
+                            <input type="text" class="form-control" id="nama" name="nama"
+                                value="<?= esc($nama) ?>" required>
                         </div>
                     </div>
 
@@ -70,8 +71,8 @@
                         <label for="username" class="form-label">Username</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-at"></i></span>
-                            <input type="text" class="form-control" id="username" name="username" 
-                                   value="<?= esc($username) ?>" required>
+                            <input type="text" class="form-control" id="username" name="username"
+                                value="<?= esc($username) ?>" required>
                         </div>
                     </div>
 
@@ -91,8 +92,8 @@
                         <label for="whatsapp" class="form-label">Whatsapp</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-whatsapp"></i></span>
-                            <input type="text" class="form-control" id="whatsapp" name="whatsapp" 
-                                   value="<?= esc($whatsapp) ?>">
+                            <input type="text" class="form-control" id="whatsapp" name="whatsapp"
+                                value="<?= esc($whatsapp) ?>">
                         </div>
                     </div>
 
@@ -100,8 +101,8 @@
                         <label for="email" class="form-label">Email</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                            <input type="email" class="form-control" id="email" name="email" 
-                                   value="<?= esc($email) ?>">
+                            <input type="email" class="form-control" id="email" name="email"
+                                value="<?= esc($email) ?>">
                         </div>
                     </div>
 
@@ -109,8 +110,8 @@
                         <label for="website" class="form-label">Website</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-globe"></i></span>
-                            <input type="text" class="form-control" id="website" name="website" 
-                                   value="<?= esc($website) ?>">
+                            <input type="text" class="form-control" id="website" name="website"
+                                value="<?= esc($website) ?>">
                         </div>
                     </div>
 
@@ -118,8 +119,8 @@
                         <label for="kepala" class="form-label">Kepala BKPSDM</label>
                         <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-people"></i></span>
-                            <input type="text" class="form-control" id="kepala" name="kepala" 
-                                   value="<?= esc($kepala) ?>">
+                            <input type="text" class="form-control" id="kepala" name="kepala"
+                                value="<?= esc($kepala) ?>">
                         </div>
                     </div>
                 </div>
