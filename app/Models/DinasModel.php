@@ -8,5 +8,5 @@ class DinasModel extends Model
 {
     protected $table = 'dinas';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nama_dinas', 'username', 'password', 'created_at'];
+    protected $allowedFields = ['nama_dinas', 'username', 'email', 'password', 'reset_token', 'created_at'];
 }

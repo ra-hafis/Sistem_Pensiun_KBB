@@ -133,7 +133,7 @@
 
 <script src="<?= base_url('js/pengajuan.js') ?>"></script>
 
-<!-- 🔒 Tambahan validasi ukuran file max 2MB -->
+<!--Tambahan validasi ukuran file max 2MB -->
 <script>
     document.getElementById('formPengajuan').addEventListener('submit', function (e) {
         const files = document.querySelectorAll('.file-upload');
@@ -149,9 +149,6 @@
             }
         });
 
-        if (!valid) {
-            e.preventDefault(); // hentikan submit
-        }
     });
 </script>
 

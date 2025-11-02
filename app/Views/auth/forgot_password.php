@@ -35,39 +35,28 @@
                                     <?php if (session()->getFlashdata('error')): ?>
                                         <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
                                     <?php endif; ?>
-                                    <?php if (session()->getFlashdata('reset_success')): ?>
-                                        <div class="alert alert-success"><?= session()->getFlashdata('reset_success') ?>
-                                        </div>
+                                    <?php if (session()->getFlashdata('success')): ?>
+                                        <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
                                     <?php endif; ?>
 
-                                    <!-- Form Lupa Password -->
+                                    <!-- Form Lupa Password via Email -->
                                     <form action="<?= base_url('/forgot-password/process') ?>" method="post">
-                                        <p class="mb-3">Masukkan Username dan Password Lama Anda untuk reset password
-                                        </p>
+                                        <p class="mb-3">Masukkan alamat email yang terdaftar untuk menerima tautan reset
+                                            password.</p>
 
-                                        <!-- Username -->
+                                        <!-- Email -->
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="username">Username</label>
+                                            <label class="form-label" for="email">Email</label>
                                             <div class="input-group">
-                                                <span class="input-group-text"><i class="fas fa-user"></i></span>
-                                                <input type="text" id="username" name="username" class="form-control"
-                                                    placeholder="Masukkan Username" required>
-                                            </div>
-                                        </div>
-
-                                        <!-- Password Lama -->
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="old_password">Password Lama</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
-                                                <input type="password" id="old_password" name="old_password"
-                                                    class="form-control" placeholder="Masukkan Password Lama" required>
+                                                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                                <input type="email" id="email" name="email" class="form-control"
+                                                    placeholder="Masukkan Email Anda" required>
                                             </div>
                                         </div>
 
                                         <!-- Tombol Kirim -->
                                         <div class="d-grid mb-3">
-                                            <button class="btn btn-custom" type="submit">Reset Password</button>
+                                            <button class="btn btn-custom" type="submit">Kirim Tautan Reset</button>
                                         </div>
 
                                         <!-- Link Balik ke Login -->

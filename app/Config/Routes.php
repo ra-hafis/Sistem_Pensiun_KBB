@@ -63,3 +63,4 @@ $routes->group('dinas', ['filter' => 'auth'], function ($routes) {
         $routes->post('update/(:num)', 'Dinas\Pengajuan::update/$1');
     });
 });
+$routes->get('testemail', 'TestEmail::index');

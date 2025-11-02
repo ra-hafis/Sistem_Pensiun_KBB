@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\AdminModel;
 use App\Models\DinasModel;
+use CodeIgniter\I18n\Time;
 
 class Auth extends BaseController
 {
@@ -60,47 +61,76 @@ class Auth extends BaseController
     }
 
     /**
-     * Halaman lupa password (username + password lama)
+     * Halaman lupa password
      */
     public function forgotPassword()
     {
-        return view('auth/forgot_password'); // view sekarang hanya form username + password lama
+        return view('auth/forgot_password');
     }
 
     /**
-     * Proses lupa password (username + password lama)
+     * Proses lupa password (kirim email reset)
      */
     public function processForgotPassword()
     {
-        $username = $this->request->getPost('username');
-        $oldPassword = $this->request->getPost('old_password');
+        $email = $this->request->getPost('email');
 
         $adminModel = new AdminModel();
         $dinasModel = new DinasModel();
 
-        // Cek di admin
-        $admin = $adminModel->where('username', $username)->first();
-        if ($admin && password_verify($oldPassword, $admin['password'])) {
-            session()->set('reset_user', $admin);
-            return redirect()->to('/reset-password');
+        $user = $adminModel->where('email', $email)->first();
+        $role = 'admin';
+
+        if (!$user) {
+            $user = $dinasModel->where('email', $email)->first();
+            $role = 'dinas';
         }
 
-        // Cek di dinas
-        $dinas = $dinasModel->where('username', $username)->first();
-        if ($dinas && password_verify($oldPassword, $dinas['password'])) {
-            session()->set('reset_user', $dinas);
-            return redirect()->to('/reset-password');
+        if (!$user) {
+            return redirect()->back()->with('error', 'Email tidak ditemukan.');
         }
 
-        return redirect()->back()->with('error', 'Username atau password lama salah.');
+        // Buat token unik
+        $token = bin2hex(random_bytes(32));
+
+        // Simpan token ke DB
+        if ($role === 'admin') {
+            $adminModel->update($user['id'], ['reset_token' => $token]);
+        } else {
+            $dinasModel->update($user['id'], ['reset_token' => $token]);
+        }
+
+        $resetLink = base_url("/reset-password?token=" . $token);
+
+        // Kirim email
+        $emailService = \Config\Services::email();
+        $emailService->setTo($email);
+        $emailService->setFrom('rwinandi01@gmail.com', 'BKPSDM');
+        $emailService->setSubject('Reset Password BKPSDM');
+        $emailService->setMessage("
+            Klik link berikut untuk mereset password Anda:<br><br>
+            <a href='{$resetLink}'>{$resetLink}</a><br><br>
+            Link ini berlaku selama 30 menit.
+        ");
+
+        if ($emailService->send()) {
+            return redirect()->back()->with('success', 'Email reset password telah dikirim.');
+        } else {
+            return redirect()->back()->with('error', 'Gagal mengirim email.');
+        }
     }
 
     /**
-     * Halaman reset password
+     * Halaman reset password (dari link email)
      */
     public function resetPassword()
     {
-        return view('auth/reset_password');
+        $token = $this->request->getGet('token');
+        if (!$token) {
+            return redirect()->to('/forgot-password')->with('error', 'Token tidak valid.');
+        }
+
+        return view('auth/reset_password', ['token' => $token]);
     }
 
     /**
@@ -108,9 +138,13 @@ class Auth extends BaseController
      */
     public function processResetPassword()
     {
+        $token = $this->request->getPost('token');
         $newPass = $this->request->getPost('password');
         $confirmPass = $this->request->getPost('confirm_password');
 
+        if (!$token) {
+            return redirect()->to('/forgot-password')->with('error', 'Token tidak valid atau sudah digunakan.');
+        }
         if (strlen($newPass) < 6) {
             return redirect()->back()->with('error', 'Password minimal 6 karakter.');
         }
@@ -118,22 +152,29 @@ class Auth extends BaseController
             return redirect()->back()->with('error', 'Konfirmasi password tidak sama!');
         }
 
-        $user = session()->get('reset_user');
+        $adminModel = new AdminModel();
+        $dinasModel = new DinasModel();
+
+        $user = $adminModel->where('reset_token', $token)->first();
+        $role = 'admin';
+
         if (!$user) {
-            return redirect()->to('/login')->with('error', 'Sesi reset password tidak valid.');
+            $user = $dinasModel->where('reset_token', $token)->first();
+            $role = 'dinas';
         }
 
-        // Tentukan model: Admin atau Dinas
-        if (isset($user['id'])) {
-            $model = isset($user['nama_dinas']) ? new DinasModel() : new AdminModel();
-
-            $model->update($user['id'], [
-                'password' => password_hash($newPass, PASSWORD_DEFAULT)
-            ]);
+        if (!$user) {
+            return redirect()->to('/forgot-password')->with('error', 'Token tidak valid atau kadaluarsa.');
         }
 
-        session()->remove('reset_user');
+        $hashed = password_hash($newPass, PASSWORD_DEFAULT);
 
-        return redirect()->to('/login')->with('reset_success', 'Password berhasil diubah. Silakan login.');
+        if ($role === 'admin') {
+            $adminModel->update($user['id'], ['password' => $hashed, 'reset_token' => null]);
+        } else {
+            $dinasModel->update($user['id'], ['password' => $hashed, 'reset_token' => null]);
+        }
+
+        return redirect()->to('/login')->with('success', 'Password berhasil diubah. Silakan login.');
     }
 }

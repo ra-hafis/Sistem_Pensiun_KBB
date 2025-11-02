@@ -50,6 +50,8 @@
 
                                     <!-- Form Reset Password -->
                                     <form action="<?= base_url('/reset-password/process') ?>" method="post">
+                                        <input type="hidden" name="token" value="<?= esc($token ?? '') ?>">
+
                                         <p class="mb-3">Silakan masukkan password baru Anda.</p>
 
                                         <!-- Password Baru -->
