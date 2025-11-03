@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const dokumenPerJenis = window.dokumenPerJenis;
 
     function renderDokumen(jenis) {
+        if (!dokumenSection) return;
+
         dokumenSection.innerHTML = '';
 
         if (dokumenPerJenis[jenis]) {
@@ -17,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     </label>
                     <input type="hidden" name="dokumen[]" value="${dok.nama}">
                     <input type="hidden" name="dokumen_wajib[]" value="${dok.wajib}">
-                    <input type="file" name="dokumen_file[${idx}]" class="form-control" 
+                    <input type="file" name="dokumen_file[${idx}]" class="form-control file-upload" 
                         ${dok.wajib == 1 ? 'required' : ''} accept="application/pdf">
                 `;
 
                 dokumenSection.appendChild(div);
 
-                // Validasi PDF
+                // Validasi file PDF dan ukuran maksimal 2MB
                 const fileInput = div.querySelector('input[type="file"]');
                 fileInput.addEventListener('change', function () {
                     const file = this.files[0];
@@ -31,6 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         const ext = file.name.split('.').pop().toLowerCase();
                         if (ext !== 'pdf') {
                             alert('Hanya file PDF yang diperbolehkan!');
+                            this.value = '';
+                        } else if (file.size > 2 * 1024 * 1024) {
+                            alert('Ukuran maksimal 2MB!');
                             this.value = '';
                         }
                     }

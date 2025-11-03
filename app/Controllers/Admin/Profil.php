@@ -59,59 +59,67 @@ class Profil extends BaseController
      */
     public function update()
     {
-        $user = session()->get('user');
+        $session = session();
+        $adminModel = new AdminModel();
 
-        // Cek login
-        if (!$user || !isset($user['id'])) {
-            return redirect()->to('/admin/login')->with('error', 'Silakan login terlebih dahulu.');
+        // Ambil ID admin dari session
+        $user = $session->get('user');
+        $id = $user['id'] ?? null;
+
+        if (!$id) {
+            return redirect()->back()->with('error', 'ID admin tidak ditemukan di session!');
         }
 
-        $id = $user['id'];
-        $admin = $this->adminModel->find($id);
-
-        // Ambil semua data dari form
+        // Ambil data dari form
         $data = [
-            'nama' => $this->request->getPost('nama'),
-            'username' => $this->request->getPost('username'),
-            'alamat' => $this->request->getPost('alamat'),
-            'whatsapp' => $this->request->getPost('whatsapp'),
-            'email' => $this->request->getPost('email'),
-            'website' => $this->request->getPost('website'),
-            'kepala' => $this->request->getPost('kepala'),
+            'nama' => trim($this->request->getPost('nama')),
+            'username' => trim($this->request->getPost('username')),
+            'alamat' => trim($this->request->getPost('alamat')),
+            'whatsapp' => trim($this->request->getPost('whatsapp')),
+            'email' => trim($this->request->getPost('email')),
+            'website' => trim($this->request->getPost('website')),
+            'kepala' => trim($this->request->getPost('kepala')),
         ];
+
+        // Validasi wajib diisi
+        foreach ($data as $key => $val) {
+            if (empty($val)) {
+                return redirect()->back()->withInput()->with('error', "Kolom $key wajib diisi!");
+            }
+        }
+
+        // Ambil data lama
+        $admin = $adminModel->find($id);
+        $fotoLama = $admin['foto'] ?? null;
 
         // Upload foto jika ada
         $file = $this->request->getFile('foto');
         if ($file && $file->isValid() && !$file->hasMoved()) {
-            $ext = strtolower($file->getExtension());
-            $allowedExt = ['jpg', 'jpeg', 'png', 'gif'];
-
-            if (!in_array($ext, $allowedExt)) {
-                return redirect()->back()->with('error', 'Format foto hanya boleh JPG, JPEG, PNG, atau GIF');
+            if ($file->getSize() > 2 * 1024 * 1024) {
+                return redirect()->back()->withInput()->with('error', 'Ukuran foto maksimal 2MB!');
             }
 
-            if ($file->getSize() > 2 * 1024 * 1024) { // Maks 2MB
-                return redirect()->back()->with('error', 'Ukuran foto maksimal 2MB');
-            }
+            $ext = $file->getExtension();
+            $namaFoto = 'admin_' . $id . '.' . $ext;
+            $file->move(ROOTPATH . 'public/uploads', $namaFoto, true);
+            $data['foto'] = $namaFoto;
 
-            // Simpan foto baru
-            $newName = $file->getRandomName();
-            $file->move(ROOTPATH . 'public/uploads', $newName);
-            $data['foto'] = $newName;
-
-            // Hapus file lama
-            if (!empty($admin['foto']) && file_exists(ROOTPATH . 'public/uploads/' . $admin['foto'])) {
-                unlink(ROOTPATH . 'public/uploads/' . $admin['foto']);
+            // Hapus foto lama
+            if (!empty($fotoLama) && file_exists(ROOTPATH . 'public/uploads/' . $fotoLama)) {
+                unlink(ROOTPATH . 'public/uploads/' . $fotoLama);
             }
+        } else {
+            // Jika tidak upload foto baru, tetap pakai foto lama
+            $data['foto'] = $fotoLama;
         }
 
-        // Update ke database
-        $this->adminModel->update($id, $data);
-
-        // Update session biar data terbaru tampil
-        $updatedAdmin = $this->adminModel->find($id);
-        session()->set('user', $updatedAdmin);
-
-        return redirect()->to('/admin/profil')->with('success', 'Profil berhasil diperbarui.');
+        // Update semua field di database
+        if ($adminModel->update($id, $data)) {
+            // Update session
+            $session->set('user', $adminModel->find($id));
+            return redirect()->to('/admin/profil')->with('success', 'Profil berhasil diperbarui!');
+        } else {
+            return redirect()->back()->withInput()->with('error', 'Gagal memperbarui profil!');
+        }
     }
 }

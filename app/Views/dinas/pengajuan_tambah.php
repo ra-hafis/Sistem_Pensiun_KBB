@@ -74,39 +74,8 @@
         <div class="col-md-12 mt-4">
             <h5 class="fw-semibold mb-3 text-primary">Unggah Dokumen Persyaratan</h5>
 
-            <?php
-            $jenisDipilih = $pengajuan['jenis'] ?? 'BUP';
-            $daftarDokumen = $dokumen_per_jenis[$jenisDipilih] ?? [];
-            ?>
-
-            <?php foreach ($daftarDokumen as $dok): ?>
-                <div class="mb-3">
-                    <label class="form-label"><?= esc($dok['nama']) ?>
-                        <?= $dok['wajib'] ? '<span class="text-danger">*</span>' : '' ?>
-                    </label>
-
-                    <?php
-                    $fileLama = null;
-                    if (!empty($dokumen)) {
-                        foreach ($dokumen as $d) {
-                            if (stripos($d['nama_dokumen'], $dok['nama']) !== false) {
-                                $fileLama = $d['file_path'];
-                                break;
-                            }
-                        }
-                    }
-                    ?>
-
-                    <?php if ($fileLama): ?>
-                        <p class="small mb-1">File saat ini:
-                            <a href="<?= base_url($fileLama) ?>" target="_blank" class="text-decoration-underline">Lihat</a>
-                        </p>
-                    <?php endif; ?>
-
-                    <input type="file" name="dokumen_file[]" class="form-control file-upload" accept="application/pdf"
-                        <?= $dok['wajib'] ? 'required' : '' ?>>
-                </div>
-            <?php endforeach; ?>
+            <!-- 🔹 TEMPAT DOKUMEN AKAN DIRUBAH DINAMIS OLEH JS -->
+            <div id="dokumen-section"></div>
         </div>
 
         <!-- Tombol Aksi -->
@@ -142,13 +111,14 @@
         files.forEach(fileInput => {
             if (fileInput.files.length > 0) {
                 const file = fileInput.files[0];
-                if (file.size > 2 * 1024 * 1024) { // 2MB = 2 x 1024 x 1024
+                if (file.size > 2 * 1024 * 1024) { // 2MB
                     alert(`File "${file.name}" melebihi ukuran maksimal 2 MB.`);
                     valid = false;
                 }
             }
         });
 
+        if (!valid) e.preventDefault();
     });
 </script>
 
