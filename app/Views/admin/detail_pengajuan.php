@@ -86,12 +86,8 @@
                     onclick="return confirm('Apakah Anda yakin mengubah status menjadi Menunggu BKPSDM?')">
                     ⏳ Menunggu
                 </a>
-
-                <!-- Tombol Validasi -->
-                <a href="#" class="validate btn btn-info">🔍 Validasi</a>
             </div>
         </div>
-
         <!-- Dokumen yang Diupload -->
         <div class="card">
             <div class="card-header">Berkas yang Diupload</div>
@@ -101,6 +97,7 @@
                         <div class="doc-card">
                             <i class="fas fa-file-alt"></i>
                             <div class="doc-title"><?= esc($doc['nama_dokumen']) ?></div>
+
                             <?php if ($doc['wajib']): ?>
                                 <span class="required">*wajib</span>
                             <?php endif; ?>
@@ -109,15 +106,15 @@
                             $ext = strtolower(pathinfo($doc['file_path'], PATHINFO_EXTENSION));
                             $isPreviewable = in_array($ext, ['pdf']);
                             $fileUrl = base_url($doc['file_path']);
+                            $filename = basename($doc['file_path']);
+                            $downloadUrl = base_url('admin/pengajuanFile/download/' . $filename);
                             ?>
-
                             <?php if ($isPreviewable): ?>
                                 <a href="<?= $fileUrl ?>" target="_blank" class="btn-preview">
                                     Lihat Preview
                                 </a>
                             <?php endif; ?>
-
-                            <a href="<?= $fileUrl ?>" target="_blank" class="btn-download">
+                            <a href="<?= $downloadUrl ?>" class="btn-download">
                                 Download
                             </a>
                         </div>
@@ -127,6 +124,7 @@
                 <?php endif; ?>
             </div>
         </div>
+
     </div>
 
     <!-- Script Tombol Tolak -->

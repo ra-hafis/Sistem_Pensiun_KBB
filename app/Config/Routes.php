@@ -35,6 +35,7 @@ $routes->group('admin', ['filter' => 'auth:admin'], function ($routes) {
     $routes->get('pengajuanKelola/updateStatus/(:num)/(:any)', 'Admin\PengajuanKelola::updateStatus/$1/$2');
     $routes->get('pengajuanDetail/(:num)', 'Admin\PengajuanDetail::index/$1');
     $routes->get('pengajuanFile/view/(:any)', 'Admin\PengajuanFile::view/$1');
+    $routes->get('pengajuanFile/download/(:any)', 'Admin\PengajuanFile::download/$1');
     $routes->get('hapusdaftarpengajuan/(:num)', 'Admin\HapusDaftarPengajuan::index/$1');
     $routes->post('hapusdaftarpengajuan/(:num)', 'Admin\HapusDaftarPengajuan::hapus/$1');
 
