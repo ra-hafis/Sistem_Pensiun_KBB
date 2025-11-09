@@ -19,8 +19,16 @@ class Auth implements FilterInterface
         // kalau ada argumen role (misalnya 'admin' atau 'user')
         if ($arguments && isset($arguments[0])) {
             $requiredRole = $arguments[0];
-            if ($session->get('role') !== $requiredRole) {
-                return redirect()->to('/login')->with('error', 'Tidak punya akses!');
+            $currentRole = $session->get('role');
+
+            if ($currentRole !== $requiredRole) {
+                if ($currentRole === 'admin') {
+                    return redirect()->to('/admin/dashboard')->with('error', 'Akses ditolak.');
+                } elseif ($currentRole === 'dinas') {
+                    return redirect()->to('/dinas/dashboard')->with('error', 'Akses ditolak.');
+                } else {
+                    return redirect()->to('/login')->with('error', 'Tidak punya akses!');
+                }
             }
         }
     }

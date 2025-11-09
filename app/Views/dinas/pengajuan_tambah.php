@@ -74,7 +74,7 @@
         <div class="col-md-12 mt-4">
             <h5 class="fw-semibold mb-3 text-primary">Unggah Dokumen Persyaratan</h5>
 
-            <!-- 🔹 TEMPAT DOKUMEN AKAN DIRUBAH DINAMIS OLEH JS -->
+            <!--TEMPAT DOKUMEN AKAN DIRUBAH DINAMIS OLEH JS -->
             <div id="dokumen-section"></div>
         </div>
 

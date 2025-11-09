@@ -69,7 +69,7 @@ class Auth extends BaseController
     }
 
     /**
-     * Proses lupa password (kirim email reset)
+     * Proses lupa password 
      */
     public function processForgotPassword()
     {

@@ -25,8 +25,8 @@ class Dashboard extends BaseController
         // Ambil pengajuan terakhir milik dinas
         $lastPengajuan = $pengajuanModel
             ->where('dinas_id', $dinas['id'])
-            ->orderBy('updated_at', 'DESC') // kalau ada kolom updated_at
-            ->orderBy('created_at', 'DESC') // fallback jika updated_at tidak ada
+            ->orderBy('updated_at', 'DESC')
+            ->orderBy('created_at', 'DESC')
             ->first();
 
         $statusTerakhir = $lastPengajuan['status'] ?? '-';
@@ -36,7 +36,7 @@ class Dashboard extends BaseController
         $showPopup = false;
         if (!session()->getFlashdata('popup_shown')) {
             $showPopup = true;
-            session()->setFlashdata('popup_shown', true); // tandai supaya sekali saja
+            session()->setFlashdata('popup_shown', true);
         }
 
         $data = [

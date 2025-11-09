@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\DinasModel;
 
+//Data Akun dinas
 class DataAkunDinas extends BaseController
 {
     protected $dinasModel;

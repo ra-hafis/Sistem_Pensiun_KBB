@@ -20,7 +20,7 @@ $routes->get('/reset-password', 'Admin\Auth::resetPassword');
 $routes->post('/reset-password/process', 'Admin\Auth::processResetPassword');
 
 // ADMIN (BKPSDM)
-$routes->group('admin', ['filter' => 'auth'], function ($routes) {
+$routes->group('admin', ['filter' => 'auth:admin'], function ($routes) {
 
     // Dashboard
     $routes->get('dashboard', 'Admin\Dashboard::index');
@@ -51,7 +51,7 @@ $routes->get('/admin/data-pegawai', 'Admin\DataPegawai::index');
 
 
 // DINAS (UNIT PEGAWAI)
-$routes->group('dinas', ['filter' => 'auth'], function ($routes) {
+$routes->group('dinas', ['filter' => 'auth:dinas'], function ($routes) {
     $routes->get('dashboard', 'Dinas\Dashboard::index');
 
     // Pengajuan Dinas
@@ -60,7 +60,7 @@ $routes->group('dinas', ['filter' => 'auth'], function ($routes) {
         $routes->get('tambah', 'Dinas\Pengajuan::tambah');
         $routes->post('simpan', 'Dinas\Pengajuan::store');
         $routes->get('detail/(:num)', 'Dinas\Pengajuan::detail/$1');
-        $routes->post('update/(:num)', 'Dinas\Pengajuan::update/$1');
+        // $routes->post('update/(:num)', 'Dinas\Pengajuan::update/$1');
     });
 });
 $routes->get('testemail', 'TestEmail::index');

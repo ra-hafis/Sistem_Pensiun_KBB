@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use App\Models\DinasModel;
 
+//Hapus dinas
 class HapusDinas extends BaseController
 {
     protected $dinasModel;

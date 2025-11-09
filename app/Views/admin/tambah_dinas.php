@@ -6,7 +6,7 @@
     <h3 class="mb-0">Tambah Akun Dinas</h3>
 </div>
 
-<!-- ✅ Tambahan Notifikasi -->
+<!--Tambahan Notifikasi -->
 <?php if (session()->getFlashdata('error')): ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <i class="bi bi-exclamation-triangle-fill"></i>
@@ -22,7 +22,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php endif; ?>
-<!-- ✅ Akhir Notifikasi -->
+<!--Akhir Notifikasi -->
 
 <form action="<?= base_url('admin/tambahdinas/simpan') ?>" method="post" class="bg-white p-4 rounded shadow">
     <?= csrf_field() ?>

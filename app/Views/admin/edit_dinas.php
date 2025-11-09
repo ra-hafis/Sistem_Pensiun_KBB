@@ -38,7 +38,7 @@
     <a href="<?= base_url('admin/dataakundinas') ?>" class="btn btn-secondary">Batal</a>
 </form>
 
-<!-- 🔧 Script auto-hide notifikasi error setelah 5 detik -->
+<!--Script auto-hide notifikasi error setelah 5 detik -->
 <script>
     setTimeout(() => {
         const alert = document.getElementById('alertMessage');

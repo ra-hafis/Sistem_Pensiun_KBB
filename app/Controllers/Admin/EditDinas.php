@@ -32,13 +32,13 @@ class EditDinas extends BaseController
         $username = trim($this->request->getPost('username'));
         $password = $this->request->getPost('password');
 
-        // ✅ Cek duplikat username
+        // Cek duplikat username
         $cekUsername = $this->dinasModel
             ->where('username', $username)
             ->where('id !=', $id) // kecuali data sendiri
             ->first();
 
-        // ✅ Cek duplikat nama dinas
+        // Cek duplikat nama dinas
         $cekNama = $this->dinasModel
             ->where('nama_dinas', $nama_dinas)
             ->where('id !=', $id)

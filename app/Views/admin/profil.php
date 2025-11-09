@@ -5,7 +5,12 @@
     <img src="/images/kbb.png" alt="Profil BKPSDM" style="height:50px; margin-right:12px;">
     <h3 class="mb-0">Profil BKPSDM</h3>
 </div>
-
+<?php if (session()->getFlashdata('success')): ?>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <i class="bi bi-check-circle-fill"></i> <?= session()->getFlashdata('success') ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
 <div class="container mt-4">
     <div class="card shadow-lg p-4 rounded-4 border-0">
         <div class="row">

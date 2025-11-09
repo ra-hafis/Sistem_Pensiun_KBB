@@ -48,10 +48,11 @@ trait TambahPengajuan
             'created_at' => date('Y-m-d H:i:s')
         ], true);
 
+        //Maksimum 2 MB
         $files = $this->request->getFiles();
         $successCount = 0;
         $failedCount = 0;
-        $sizeLimit = 2 * 1024 * 1024; // 🔒 Maksimum 2 MB
+        $sizeLimit = 2 * 1024 * 1024;
 
         if (isset($files['dokumen_file'])) {
             foreach ($files['dokumen_file'] as $file) {
@@ -59,7 +60,7 @@ trait TambahPengajuan
                     $ext = strtolower($file->getClientExtension());
                     $size = $file->getSize(); // Ukuran file (bytes)
 
-                    // ✅ Hanya lanjut kalau PDF dan <= 2MB
+                    // Hanya lanjut kalau PDF dan <= 2MB
                     if ($ext !== 'pdf') {
                         $failedCount++;
                         continue;
@@ -70,7 +71,7 @@ trait TambahPengajuan
                         continue;
                     }
 
-                    // ✅ Simpan file dan data ke DB jika lolos semua validasi
+                    // Simpan file dan data ke DB jika lolos semua validasi
                     $newName = $file->getRandomName();
                     $file->move(FCPATH . 'uploads', $newName);
 
